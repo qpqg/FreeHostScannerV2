@@ -23,6 +23,8 @@ status_codes = [200, 302, 400]
 
 #Putuskan_paksa_pada
 timeouts = 3
+#Get Host name Time Out
+set_hostname_TM = 2
 
 garis = "="*25
 def baleho():
@@ -37,7 +39,7 @@ def user_details():
         s.connect(("8.8.8.8",80))
         ip = s.getsockname()
         print green("IP Local ISP: " + ip[0]).split("\n")[0]
-        print green("Your Host Name: " + requests.request("GET", "http://api.webprovider.cz/ip.php", timeout=5).json()["ip"])
+        print green("Your Host Name: " + requests.request("GET", "http://api.webprovider.cz/ip.php", timeout=set_hostname_TM).json()["ip"])
     
     except socket.error as e:
         print eror(e)
