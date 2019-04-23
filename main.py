@@ -4,7 +4,7 @@
 
 import requests
 from threading import Thread
-from time import sleep
+
 from os import system, popen
 import socket
  
