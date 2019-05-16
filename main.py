@@ -156,6 +156,7 @@ def proxy_testing():
 #Youcan mod this thread
 def singT(m=None, argumen=None):
     t = Thread(target=m, args=argumen)
+    t.daemon = True
     t.start()
     t.join()
     
